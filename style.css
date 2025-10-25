@@ -124,19 +124,19 @@ nav ul li a:hover {
 .discord-btn {
   display: inline-block;
   padding: 16px 40px;
-  background-color: #d8175f;
+  background-color: #9b51e0;
   color: white;
   font-weight: bold;
   font-size: 1.3em;
   border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 0 15px #d8175f;
+  box-shadow: 0 0 15px #9b51e0;
   transition: background-color 0.3s ease;
 }
 
 .discord-btn:hover {
-  background-color: #b3144e;
-  box-shadow: 0 0 20px #b3144e;
+  background-color: #7e3dc2;
+  box-shadow: 0 0 20px #7e3dc2;
 }
 
 /* IMAGEN FINAL EN SECCIÓN PROPIA */

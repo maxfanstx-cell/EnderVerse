@@ -229,3 +229,68 @@ nav ul li a:hover {
     padding-right: 0;
   }
 }
+
+.discord-info {
+  background-color: #111;
+  padding: 60px 30px;
+}
+
+.discord-heading {
+  font-size: 2.4em;
+  color: #d8175f;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.discord-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.discord-text {
+  flex: 1;
+  max-width: 500px;
+  color: #ccc;
+  font-size: 1.1em;
+  padding-left: 30px;
+}
+
+.discord-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.discord-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.discord-img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #d8175f;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .discord-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .discord-text {
+    padding-left: 0;
+  }
+
+  .discord-img-wrapper {
+    justify-content: center;
+    padding-right: 0;
+  }
+}

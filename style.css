@@ -101,37 +101,19 @@ nav ul li a:hover {
   color: #ccc;
 }
 
-/* SECCIÓN POR SUPUESTO */
-.por-supuesto {
+/* SECCIÓN DISCORD FINAL */
+.discord-section {
   background-color: #111;
   padding: 60px 30px;
   text-align: center;
 }
 
-.por-supuesto h2 {
-  font-size: 2.4em;
-  color: #d8175f;
+.discord-section h2 {
+  font-size: 2.2em;
+  color: white;
   margin-bottom: 20px;
 }
 
-.por-supuesto p {
-  font-size: 1.1em;
-  color: #ccc;
-  margin-bottom: 15px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.por-supuesto-img {
-  width: 100%;
-  max-width: 380px;
-  margin-top: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #d8175f;
-}
-
-/* BOTÓN DISCORD */
 .discord-btn {
   display: inline-block;
   padding: 16px 40px;
@@ -143,12 +125,19 @@ nav ul li a:hover {
   text-decoration: none;
   box-shadow: 0 0 15px #d8175f;
   transition: background-color 0.3s ease;
-  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .discord-btn:hover {
   background-color: #b3144e;
   box-shadow: 0 0 20px #b3144e;
+}
+
+.discord-img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #d8175f;
 }
 
 /* RESPONSIVE */
@@ -166,11 +155,12 @@ nav ul li a:hover {
     font-size: 1em;
   }
 
-  .por-supuesto h2 {
-    font-size: 2em;
+  .discord-section h2 {
+    font-size: 1.6em;
   }
 
-  .por-supuesto p {
-    font-size: 1em;
+  .discord-btn {
+    font-size: 1.1em;
+    padding: 14px 30px;
   }
 }

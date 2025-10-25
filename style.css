@@ -82,10 +82,10 @@ nav ul li a:hover {
 .hero-text h2 {
   font-size: 2.4em;
   margin-bottom: 10px;
-  color: #fff;
+  color: inherit;
 }
 
-.hero-text .highlight {
+.hero-text h2 .highlight {
   color: #d8175f;
   font-weight: bold;
 }

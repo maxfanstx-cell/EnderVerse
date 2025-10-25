@@ -117,7 +117,7 @@ nav ul li a:hover {
 /* BOTÓN DISCORD EN SECCIÓN SEPARADA */
 .discord-button {
   background-color: #111;
-  padding: 20px 30px 40px;
+  padding: 20px 30px 80px;
   text-align: center;
 }
 
@@ -139,11 +139,39 @@ nav ul li a:hover {
   box-shadow: 0 0 20px #7e3dc2;
 }
 
-/* IMAGEN FINAL EN SECCIÓN PROPIA */
-.discord-image {
+/* SECCIÓN FINAL CON TEXTO + IMAGEN */
+.discord-info {
   background-color: #111;
-  padding: 0 30px 60px;
-  text-align: center;
+  padding: 60px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.discord-text {
+  flex: 1;
+  max-width: 500px;
+  color: #ccc;
+  font-size: 1.1em;
+}
+
+.discord-text h2 {
+  font-size: 2.2em;
+  color: #d8175f;
+  margin-bottom: 20px;
+}
+
+.discord-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.discord-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .discord-img {
@@ -175,5 +203,10 @@ nav ul li a:hover {
   .discord-btn {
     font-size: 1.1em;
     padding: 14px 30px;
+  }
+
+  .discord-info {
+    flex-direction: column;
+    text-align: center;
   }
 }

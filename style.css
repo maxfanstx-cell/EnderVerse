@@ -114,10 +114,10 @@ nav ul li a:hover {
   margin-bottom: 0;
 }
 
-/* SECCIÓN DISCORD FINAL */
-.discord-section {
+/* BOTÓN DISCORD EN SECCIÓN SEPARADA */
+.discord-button {
   background-color: #111;
-  padding: 20px 30px 60px;
+  padding: 20px 30px 40px;
   text-align: center;
 }
 
@@ -132,12 +132,18 @@ nav ul li a:hover {
   text-decoration: none;
   box-shadow: 0 0 15px #d8175f;
   transition: background-color 0.3s ease;
-  margin-bottom: 30px;
 }
 
 .discord-btn:hover {
   background-color: #b3144e;
   box-shadow: 0 0 20px #b3144e;
+}
+
+/* IMAGEN FINAL EN SECCIÓN PROPIA */
+.discord-image {
+  background-color: #111;
+  padding: 0 30px 60px;
+  text-align: center;
 }
 
 .discord-img {

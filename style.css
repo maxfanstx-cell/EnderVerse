@@ -159,13 +159,13 @@ nav ul li a:hover {
   gap: 20px;
 }
 
-.discord-content.flipped .discord-text.right {
+.discord-content.flipped .discord-text.center {
   flex: 1;
   font-size: 1.3em;
   color: #ccc;
   line-height: 1.8;
   max-width: 480px;
-  text-align: right;
+  text-align: center;
 }
 
 .discord-content.flipped .discord-img-wrapper {
@@ -211,7 +211,7 @@ nav ul li a:hover {
     text-align: center;
   }
 
-  .discord-content.flipped .discord-text.right {
+  .discord-content.flipped .discord-text.center {
     text-align: center;
   }
 

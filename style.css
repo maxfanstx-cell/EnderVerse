@@ -1,67 +1,147 @@
-/* POR SUPUESTO */
-.discord-info {
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0b0b0b;
+  color: #fff;
+}
+
+/* HEADER */
+header {
   background-color: #111;
-  padding: 80px 30px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.discord-heading {
-  font-size: 3em;
+.logo-text-header {
+  font-size: 1.8em;
+  font-weight: bold;
   color: #d8175f;
-  text-align: center;
-  margin-bottom: 30px;
 }
 
-.discord-content {
+/* BOTÓN DE MENÚ */
+button {
+  background-color: #d8175f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+button:hover {
+  background-color: #b3144e;
+}
+
+/* NAVEGACIÓN */
+nav {
+  display: none;
+  background-color: #1a1a1a;
+  padding: 10px 30px;
+}
+
+nav.visible {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.discord-content.compact {
-  gap: 10px;
-  align-items: center;
+nav ul li a {
+  color: #d8175f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
-.discord-text {
-  flex: 1;
-  font-size: 1.3em;
-  color: #ccc;
-  line-height: 1.8;
-  max-width: 480px;
-  text-align: center;
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
-.discord-content.compact .discord-text {
-  margin-right: 10px;
-  max-width: 460px;
-}
-
-.discord-img-wrapper {
-  flex: 1;
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://endermanga.wordpress.com/wp-content/uploads/2025/10/reddt.png?w=512");
+  background-size: cover;
+  background-position: center;
   display: flex;
+  align-items: flex-end;
   justify-content: flex-start;
 }
 
-.discord-content.compact .discord-img-wrapper {
-  margin-left: 10px;
-}
-
-.discord-img {
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
   width: 100%;
-  max-width: 340px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #d8175f;
+  box-sizing: border-box;
 }
 
-/* NUEVO: Alineación derecha */
+.hero-text h2 {
+  font-size: 2.4em;
+  margin-bottom: 10px;
+  color: inherit;
+}
+
+.hero-text h2 .highlight {
+  color: #d8175f;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+/* DISCORD */
+.discord-call {
+  background-color: #111;
+  padding: 60px 30px 20px;
+  text-align: center;
+}
+
+.discord-call h2 {
+  font-size: 2.2em;
+  color: white;
+  margin-bottom: 0;
+}
+
+.discord-button {
+  background-color: #111;
+  padding: 20px 30px 80px;
+  text-align: center;
+}
+
+.discord-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: #9b51e0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 15px #9b51e0;
+  transition: background-color 0.3s ease;
+}
+
+.discord-btn:hover {
+  background-color: #7e3dc2;
+  box-shadow: 0 0 20px #7e3dc2;
+}
+
+/* POR SUPUESTO */
 .discord-info.right-align {
   background-color: #111;
   padding: 80px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
 }
 
 .discord-info.right-align .discord-heading {
@@ -125,21 +205,6 @@
   .discord-btn {
     font-size: 1.1em;
     padding: 14px 30px;
-  }
-
-  .discord-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .discord-img-wrapper {
-    justify-content: center;
-  }
-
-  .discord-content.compact .discord-text,
-  .discord-content.compact .discord-img-wrapper {
-    margin: 0;
   }
 
   .discord-info.right-align .discord-content {

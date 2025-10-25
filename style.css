@@ -156,7 +156,7 @@ nav ul li a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* reducido para acercar texto e imagen */
+  gap: 20px;
 }
 
 .discord-text {
@@ -168,19 +168,29 @@ nav ul li a:hover {
   max-width: 480px;
 }
 
-.discord-text p {
-  margin-bottom: 20px;
+.discord-content.compact {
+  gap: 10px;
+  align-items: center;
+}
+
+.discord-content.compact .discord-text {
+  margin-right: 10px;
+  max-width: 460px;
 }
 
 .discord-img-wrapper {
   flex: 1;
   display: flex;
-  justify-content: flex-start; /* más cerca del texto */
+  justify-content: flex-start;
+}
+
+.discord-content.compact .discord-img-wrapper {
+  margin-left: 10px;
 }
 
 .discord-img {
   width: 100%;
-  max-width: 340px; /* ligeramente más compacto */
+  max-width: 340px;
   border-radius: 10px;
   box-shadow: 0 0 15px #d8175f;
 }
@@ -217,5 +227,10 @@ nav ul li a:hover {
 
   .discord-img-wrapper {
     justify-content: center;
+  }
+
+  .discord-content.compact .discord-text,
+  .discord-content.compact .discord-img-wrapper {
+    margin: 0;
   }
 }

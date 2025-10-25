@@ -139,7 +139,7 @@ nav ul li a:hover {
 }
 
 /* POR SUPUESTO AJUSTADO */
-.discord-info.flipped-layout {
+.discord-info.balanced-layout {
   background-color: #111;
   padding: 80px 30px;
 }
@@ -151,7 +151,7 @@ nav ul li a:hover {
   margin-bottom: 30px;
 }
 
-.discord-content.flipped {
+.discord-content.balanced {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -159,22 +159,26 @@ nav ul li a:hover {
   gap: 20px;
 }
 
-.discord-content.flipped .discord-text.center {
+.discord-text.centered-block {
   flex: 1;
   font-size: 1.3em;
   color: #ccc;
   line-height: 1.8;
   max-width: 480px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.discord-content.flipped .discord-img-wrapper {
+.discord-img-wrapper {
   flex: 1;
   display: flex;
   justify-content: flex-end;
 }
 
-.discord-content.flipped .discord-img {
+.discord-img {
   width: 100%;
   max-width: 340px;
   border-radius: 10px;
@@ -205,17 +209,18 @@ nav ul li a:hover {
     padding: 14px 30px;
   }
 
-  .discord-content.flipped {
+  .discord-content.balanced {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .discord-content.flipped .discord-text.center {
+  .discord-text.centered-block {
     text-align: center;
+    align-items: center;
   }
 
-  .discord-content.flipped .discord-img-wrapper {
+  .discord-img-wrapper {
     justify-content: center;
   }
 }

@@ -159,18 +159,18 @@ nav ul li a:hover {
   gap: 20px;
 }
 
+.discord-content.compact {
+  gap: 10px;
+  align-items: center;
+}
+
 .discord-text {
   flex: 1;
-  text-align: center;
   font-size: 1.3em;
   color: #ccc;
   line-height: 1.8;
   max-width: 480px;
-}
-
-.discord-content.compact {
-  gap: 10px;
-  align-items: center;
+  text-align: center;
 }
 
 .discord-content.compact .discord-text {

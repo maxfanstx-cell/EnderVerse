@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnderVerse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://endermanga.wordpress.com/wp-content/uploads/2025/10/reddt.png?w=512" alt="Logo EnderVerse" class="logo" />
+      <span class="logo-text">EnderVerse</span>
+    </div>
+    <button id="menu-toggle">☰</button>
+  </header>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="catalogo.html">Inicio</a></li>
+      <li><a href="buscador.html">Buscar</a></li>
+      <li><a href="favoritos.html">Favoritos</a></li>
+      <li><a href="subir.html">Subir Manga</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <img class="hero-banner" src="https://endermanga.wordpress.com/wp-content/uploads/2025/10/reddt.png?w=512" alt="Banner principal" />
+      <h1>Bienvenidos a EnderVerse</h1>
+      <p>Disfruta de tus mangas favoritos de manera gratuita y en español</p>
+      <a href="https://discord.com/" class="discord-btn">¡Unirme Ya!</a>
+    </section>
+
+    <section class="por-supuesto">
+      <h2>Por Supuesto</h2>
+      <p>Y por supuesto, si quieres pedir algún manga que subamos puedes hacerlo desde nuestro apartado de <strong>«Pedidos»</strong>.</p>
+      <p>Y si quieres ser parte del <strong>«Staff»</strong> del servidor de Discord o colaborar con <strong>«EnderVerse»</strong>, también puedes hacerlo desde el <strong>«Discord»</strong>!!!!!</p>
+      <img src="https://endermanga.wordpress.com/wp-content/uploads/2025/10/error.png" alt="Personaje manga" class="por-supuesto-img" />
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('menu-toggle').onclick = () => {
+      document.getElementById('menu').classList.toggle('visible');
+    };
+  </script>
+</body>
+</html>

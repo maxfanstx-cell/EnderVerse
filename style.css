@@ -146,13 +146,14 @@ nav ul li a:hover {
 
 .discord-heading.center {
   font-size: 3em;
-  color: #fff;
+  color: #d8175f; /* Color rosa aplicado */
   text-align: center;
   margin-bottom: 60px;
 }
 
 .discord-content.balanced {
   display: flex;
+  flex-direction: row-reverse; /* Invertir orden: imagen primero, texto después */
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -175,7 +176,7 @@ nav ul li a:hover {
 .discord-img-wrapper {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Alineación opuesta para mantener balance */
 }
 
 .discord-img {
@@ -202,6 +203,10 @@ nav ul li a:hover {
   .discord-text.centered-block {
     max-width: 100%;
     font-size: 1.1em;
+  }
+
+  .discord-img-wrapper {
+    justify-content: center;
   }
 
   .discord-img {

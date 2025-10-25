@@ -10,14 +10,8 @@ header {
   background-color: #111;
   padding: 15px 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-}
-
-.logo-text {
-  font-size: 2em;
-  font-weight: bold;
-  color: #d8175f;
 }
 
 /* BOTÓN DE MENÚ */
@@ -85,20 +79,15 @@ nav ul li a:hover {
   box-sizing: border-box;
 }
 
-.hero-title {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  font-size: 3em;
-  color: #d8175f;
-  font-weight: bold;
-  text-shadow: 0 0 10px #d8175f;
-}
-
 .hero-text h2 {
-  font-size: 2em;
+  font-size: 2.4em;
   margin-bottom: 10px;
   color: #fff;
+}
+
+.hero-text .highlight {
+  color: #d8175f;
+  font-weight: bold;
 }
 
 .hero-text p {
@@ -163,14 +152,8 @@ nav ul li a:hover {
     gap: 10px;
   }
 
-  .hero-title {
-    font-size: 2em;
-    top: 20px;
-    left: 20px;
-  }
-
   .hero-text h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
   }
 
   .hero-text p {

@@ -213,3 +213,120 @@ nav ul li a:hover {
     max-width: 300px;
   }
 }
+
+/* CATÁLOGO GENERAL */
+body {
+  background-color: #0b0b0b;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+/* TÍTULO DEL CATÁLOGO */
+.catalogo-titulo {
+  font-size: 2.5em;
+  color: #d8175f;
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+/* BOTÓN DE INICIO */
+header a button {
+  background-color: #d8175f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+header a button:hover {
+  background-color: #b3144e;
+}
+
+/* GRID DE CATÁLOGO */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 40px;
+}
+
+/* TARJETA DE ANIME */
+.anime-card {
+  background-color: #111;
+  border: 2px solid #d8175f;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(216, 23, 95, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(216, 23, 95, 0.6);
+}
+
+.anime-card h3 {
+  color: #d8175f;
+  margin: 15px 0;
+}
+
+/* BOTÓN VER AHORA */
+.anime-card button {
+  background-color: #d8175f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.anime-card button:hover {
+  background-color: #b3144e;
+}
+
+/* ETIQUETAS */
+.etiqueta-superior,
+.etiqueta-diagonal {
+  position: absolute;
+  background-color: #d8175f;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+
+.etiqueta-superior.izquierda {
+  top: 10px;
+  left: 10px;
+}
+
+.etiqueta-superior.derecha {
+  top: 10px;
+  right: 10px;
+}
+
+.etiqueta-diagonal {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg);
+}
+
+/* IMAGEN WRAPPER */
+.imagen-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.imagen-wrapper img {
+  width: 100%;
+  border-radius: 10px;
+}

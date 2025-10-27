@@ -1,3 +1,4 @@
+/* GENERAL */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -146,14 +147,14 @@ nav ul li a:hover {
 
 .discord-heading.center {
   font-size: 3em;
-  color: #d8175f; /* Color rosa aplicado */
+  color: #d8175f;
   text-align: center;
   margin-bottom: 60px;
 }
 
 .discord-content.balanced {
   display: flex;
-  flex-direction: row-reverse; /* Invertir orden: imagen primero, texto después */
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -176,7 +177,7 @@ nav ul li a:hover {
 .discord-img-wrapper {
   flex: 1;
   display: flex;
-  justify-content: flex-start; /* Alineación opuesta para mantener balance */
+  justify-content: flex-start;
 }
 
 .discord-img {
@@ -215,14 +216,6 @@ nav ul li a:hover {
 }
 
 /* CATÁLOGO GENERAL */
-body {
-  background-color: #0b0b0b;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-}
-
-/* TÍTULO DEL CATÁLOGO */
 .catalogo-titulo {
   font-size: 2.5em;
   color: #d8175f;
@@ -230,7 +223,6 @@ body {
   margin: 40px 0 20px;
 }
 
-/* BOTÓN DE INICIO */
 header a button {
   background-color: #d8175f;
   color: white;
@@ -257,6 +249,7 @@ header a button:hover {
 
 /* TARJETA DE ANIME */
 .anime-card {
+  position: relative;
   background-color: #111;
   border: 2px solid #d8175f;
   border-radius: 10px;
@@ -264,6 +257,7 @@ header a button:hover {
   text-align: center;
   box-shadow: 0 0 15px rgba(216, 23, 95, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .anime-card:hover {
@@ -276,7 +270,6 @@ header a button:hover {
   margin: 15px 0;
 }
 
-/* BOTÓN VER AHORA */
 .anime-card button {
   background-color: #d8175f;
   color: white;
@@ -291,32 +284,43 @@ header a button:hover {
   background-color: #b3144e;
 }
 
-/* ETIQUETAS */
-.etiqueta-superior,
-.etiqueta-diagonal {
+/* ETIQUETAS INTEGRADAS */
+.etiqueta-superior {
   position: absolute;
-  background-color: #d8175f;
-  color: white;
+  top: 10px;
+  padding: 3px 8px;
+  font-size: 0.75em;
   font-weight: bold;
-  padding: 5px 10px;
-  font-size: 0.9em;
+  color: white;
   border-radius: 5px;
+  opacity: 0.75;
+  z-index: 2;
 }
 
 .etiqueta-superior.izquierda {
-  top: 10px;
   left: 10px;
+  background-color: #3FEB9A;
 }
 
 .etiqueta-superior.derecha {
-  top: 10px;
   right: 10px;
+  background-color: #696969;
 }
 
 .etiqueta-diagonal {
+  position: absolute;
   bottom: 10px;
   left: 50%;
-  transform: translateX(-50%) rotate(-10deg);
+  transform: translateX(-50%);
+  background-color: #4C7A79;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 6px 18px;
+  opacity: 0.75;
+  border-radius: 5px;
+  z-index: 2;
+  text-align: center;
 }
 
 /* IMAGEN WRAPPER */

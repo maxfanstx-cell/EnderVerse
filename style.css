@@ -343,3 +343,25 @@ header a button:hover {
 .episode:hover {
   transform: translateY(-5px);
 }
+
+.capitulo-info ul {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Espacio entre los elementos */
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.capitulo-info ul li {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .capitulo-info ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}

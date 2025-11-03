@@ -66,7 +66,7 @@
 
   <div class="capitulo-container">
     <!-- Banner -->
-    <img class="capitulo-banner" src="https://insertar-url-del-banner.com/banner.jpg" alt="Banner del capítulo" />
+    <img class="capitulo-banner" src="https://endermanga.wordpress.com/wp-content/uploads/2025/11/snapedit_1762127143120.png" alt="Banner del capítulo" />
 
     <!-- Info del capítulo -->
     <div class="capitulo-info">
@@ -74,11 +74,6 @@
         <li><strong>Capítulo:</strong> <span>1</span></li>
         <li><strong>Cantidad de páginas:</strong> <span>27</span></li>
         <li><strong>Tomo:</strong> <span>1</span></li>
-        <li><strong>Idioma:</strong> <span>Español Latino</span></li>
-        <li><strong>Autor:</strong> <span>Tomoki Izumi</span></li>
-        <li><strong>Fecha de Estreno:</strong> <span>2 de noviembre de 2018</span></li>
-        <li><strong>Mayoria de Edad:</strong> <span>16+</span></li>
-        <li><strong>Estado:</strong> <span>En Emisión</span></li>
       </ul>
     </div>
 
@@ -89,7 +84,8 @@
       <a href="capitulo-2.html">Capítulo siguiente ⟶</a>
     </div>
 
-    <!-- Visor de páginas -->
+    <!-- Título dinámico y visor -->
+    <h2 id="titulo-capitulo" style="color: #d8175f; margin-bottom: 20px;"></h2>
     <div id="visor"></div>
   </div>
 
@@ -100,11 +96,11 @@
         { num: 1, page: "https://en3.movietop.cc/comics/pic1/34/24482/547344/55167e3d41e253a86c71866a62f39c72.webp?acc=f8-dm-eQh8nMKDyWMeUTOA&exp=1762195592" },
         { num: 2, page: "https://en13.movietop.cc/comics/pic1/34/24482/547344/e26c7884676c750dbdf4b20c04755a58.webp?acc=i1GJnxecK7rouH2AGoxAzA&exp=1762195630" },
         { num: 3, page: "https://en8.movietop.cc/comics/pic1/34/24482/547344/dc9c5e72115e56504b3ece307a461181.webp?acc=l8BMj7QT74nvlx_0tUdBqw&exp=1762195630" }
-        // Agregá más páginas según necesites
       ]
     };
 
     function mostrarPaginas() {
+      document.getElementById("titulo-capitulo").textContent = capitulo.titulo;
       const contenedor = document.getElementById("visor");
       capitulo.paginas.forEach(p => {
         const img = document.createElement("img");

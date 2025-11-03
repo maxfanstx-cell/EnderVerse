@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capítulo 1 - Mieruko-chan</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .capitulo-container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .capitulo-banner {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      border-radius: 10px;
+    }
+
+    .capitulo-info ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .capitulo-info ul li {
+      margin-bottom: 8px;
+    }
+
+    .capitulo-info strong {
+      color: #00ff99;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .nav-buttons a {
+      background-color: #D8175F;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    #visor img {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo-text-header">Mini AnimeFLV</h1>
+    <a href="../../mangas/mieruko-chan/Tomo-1.html"><button>⬅ Volver al Tomo</button></a>
+  </header>
+
+  <div class="capitulo-container">
+    <!-- Banner -->
+    <img class="capitulo-banner" src="https://insertar-url-del-banner.com/banner.jpg" alt="Banner del capítulo" />
+
+    <!-- Info del capítulo -->
+    <div class="capitulo-info">
+      <ul>
+        <li><strong>Capítulo:</strong> <span>1</span></li>
+        <li><strong>Cantidad de páginas:</strong> <span>27</span></li>
+        <li><strong>Tomo:</strong> <span>1</span></li>
+        <li><strong>Idioma:</strong> <span>Español Latino</span></li>
+        <li><strong>Autor:</strong> <span>Tomoki Izumi</span></li>
+        <li><strong>Fecha de Estreno:</strong> <span>2 de noviembre de 2018</span></li>
+        <li><strong>Mayoria de Edad:</strong> <span>16+</span></li>
+        <li><strong>Estado:</strong> <span>En Emisión</span></li>
+      </ul>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="nav-buttons">
+      <a href="../../mangas/mieruko-chan/Tomo-1.html">← Salir</a>
+      <a href="capitulo-2.html">⟵ Capítulo anterior</a>
+      <a href="capitulo-2.html">Capítulo siguiente ⟶</a>
+    </div>
+
+    <!-- Visor de páginas -->
+    <div id="visor"></div>
+  </div>
+
+  <script>
+    const capitulo = {
+      titulo: "Capítulo 1: ¿Los puedes ver?",
+      paginas: [
+        { num: 1, page: "https://tu-url.com/pagina1.jpg" },
+        { num: 2, page: "https://tu-url.com/pagina2.jpg" },
+        { num: 3, page: "https://tu-url.com/pagina3.jpg" }
+        // Agregá más páginas según necesites
+      ]
+    };
+
+    function mostrarPaginas() {
+      const contenedor = document.getElementById("visor");
+      capitulo.paginas.forEach(p => {
+        const img = document.createElement("img");
+        img.src = p.page;
+        img.alt = `Página ${p.num}`;
+        contenedor.appendChild(img);
+      });
+    }
+
+    window.onload = mostrarPaginas;
+  </script>
+</body>
+</html>

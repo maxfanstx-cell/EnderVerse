@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capítulo 1 - Mieruko-chan</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .capitulo-container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .capitulo-banner {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      border-radius: 10px;
+    }
+
+    .capitulo-info ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .capitulo-info ul li {
+      margin-bottom: 8px;
+    }
+
+    .capitulo-info strong {
+      color: #00ff99;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .nav-buttons a {
+      background-color: #D8175F;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    #visor img {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo-text-header">Mini AnimeFLV</h1>
+    <a href="../../mangas/mieruko-chan/Tomo-1.html"><button>⬅ Volver al Tomo</button></a>
+  </header>
+
+  <div class="capitulo-container">
+    <!-- Banner -->
+    <img class="capitulo-banner" src="https://endermanga.wordpress.com/wp-content/uploads/2025/11/snapedit_1762127143120.png" alt="Banner del capítulo" />
+
+    <!-- Info del capítulo -->
+    <div class="capitulo-info">
+      <ul>
+        <li><strong>Capítulo:</strong> <span>1</span></li>
+        <li><strong>Cantidad de páginas:</strong> <span>27</span></li>
+        <li><strong>Tomo:</strong> <span>1</span></li>
+      </ul>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="nav-buttons">
+      <a href="../../mangas/mieruko-chan/Tomo-1.html">← Salir</a>
+      <a href="capitulo-2.html">⟵ Capítulo anterior</a>
+      <a href="capitulo-2.html">Capítulo siguiente ⟶</a>
+    </div>
+
+    <!-- Título dinámico y visor -->
+    <h2 id="titulo-capitulo" style="color: #d8175f; margin-bottom: 20px;"></h2>
+    <div id="visor"></div>
+  </div>
+
+  <script>
+    const capitulo = {
+      titulo: "Capítulo 1: ¿Los puedes ver?",
+      paginas: [
+        { num: 1, page: "https://es13.movietop.cc/es_manga/pic5/22/28502/756135/4c2e5eaae9152079b9e95845750bb9ab.webp?acc=VPu72OyTsqUTwAXlXDk1Dg&exp=1762197330" },
+        { num: 2, page: "https://es6.movietop.cc/es_manga/pic5/22/28502/756135/913f7da49fa19c66a96f14d2c9c60185.webp?acc=pnZ6-XalEvqLfM8oWPja0g&exp=1762197330" },
+        { num: 3, page: "https://es4.movietop.cc/es_manga/pic5/22/28502/756135/c4dc035d67bc669546c560622ac4bdd4.webp?acc=47-PBJI5ieOrC7anG3SMWg&exp=1762197330" },
+        { num: 4, page: "https://es12.movietop.cc/es_manga/pic5/22/28502/756135/491442df5f88c6aa018e86dac21d3606.webp?acc=ifQ39Le8yiixjsSQoCjEbQ&exp=1762197330" }
+      ]
+    };
+
+    function mostrarPaginas() {
+      document.getElementById("titulo-capitulo").textContent = capitulo.titulo;
+      const contenedor = document.getElementById("visor");
+      capitulo.paginas.forEach(p => {
+        const img = document.createElement("img");
+        img.src = p.page;
+        img.alt = `Página ${p.num}`;
+        contenedor.appendChild(img);
+      });
+    }
+
+    window.onload = mostrarPaginas;
+  </script>
+</body>
+</html>

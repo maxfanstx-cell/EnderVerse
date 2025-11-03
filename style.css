@@ -365,3 +365,7 @@ header a button:hover {
     align-items: center;
   }
 }
+
+a {
+  text-decoration: none;
+}

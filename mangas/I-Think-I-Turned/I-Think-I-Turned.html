@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mieruko-chan - EnderVerse</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #fff;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    .anime-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .anime-info img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .anime-details {
+      flex: 1;
+      margin-top: -10px;
+    }
+
+    #anime-title {
+      font-size: 3.2em;
+      color: #d8175f;
+      margin-bottom: 5px;
+    }
+
+    #anime-sinopsis {
+      margin-bottom: 15px;
+    }
+
+    .anime-details ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    .anime-details ul li {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    .anime-details ul li strong {
+      color: #00ff37;
+      margin-right: 5px;
+    }
+
+    .anime-details ul li span {
+      color: #fff;
+    }
+
+    .action-buttons {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .action-buttons a {
+      padding: 14px 28px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .action-buttons .descargar {
+      background-color: #22F0AC;
+      color: #0b0b0b;
+    }
+
+    .action-buttons .trailer {
+      background-color: #696969;
+      color: white;
+    }
+
+    .season-selector {
+      margin: 30px 0 30px;
+      text-align: center;
+    }
+
+    .season-selector select {
+      background-color: #1a1a1a;
+      color: #31EBB1;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid #31EBB1;
+      font-size: 1.1em;
+    }
+
+    .episode {
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .episode-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .episode img {
+      width: 120px;
+      border-radius: 10px;
+    }
+
+    .episode span {
+      font-weight: bold;
+      color: #00ff99;
+    }
+
+    .player-card {
+      margin-top: 15px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+    }
+
+    .player-card iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0b0b0b;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #loading-screen img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    #loading-screen p {
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color: #d8175f; font-size: 3.2em;">EnderVerse</h1>
+    <a href="../../catalogo.html"><button>⬅ Volver al catálogo</button></a>
+  </header>
+
+  <div class="container">
+    <div class="anime-info">
+      <div style="text-align: center;">
+        <img id="anime-cover" src="https://endermanga.wordpress.com/wp-content/uploads/2025/10/8-sin-titulo4_20241007213006.png" alt="Portada del anime">
+        <div class="season-selector">
+          <label for="season-select"><strong>Seleccionar Temporada:</strong></label><br><br>
+          <select id="season-select" onchange="cambiarTemporada()">
+            <option value="s1">S1: Mieruko-chan Tomo 1</option>
+            <option value="s2">S2: Mieruko-chan Tomo 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="anime-details">
+        <h2 id="anime-title">Mieruko-chan</h2>
+        <p id="anime-sinopsis">Miko es una típica estudiante de preparatoria cuya vida da un vuelco cuando de repente comienza a ver monstruos espantosos y horribles. A pesar de estar completamente aterrorizada, Miko sigue con su vida diaria, fingiendo no darse cuenta de los horrores que la rodean. Debe soportar el miedo para mantenerse a ella y a su amiga Hana fuera de peligro, incluso si eso significa enfrentarse cara a cara con lo peor. Mezclando comedia y horror, Mieruko-chan cuenta la historia de una chica que trata de lidiar con lo paranormal actuando indiferente hacia él.</p>
+        <ul>
+          <li><strong>Cantidad de Tomos:</strong> <span>13</span></li>
+          <li><strong>Tomo:</strong> <span>1</span></li>
+          <li><strong>Idioma:</strong> <span>Español Latino</span></li>
+          <li><strong>autor:</strong> <span>Tomoki Izumi</span></li>
+          <li><strong>Fecha de Estreno:</strong> <span>2 de noviembre de 2018</span></li>
+          <li><strong>Mayoria de Edad:</strong> <span>16+</span></li>
+          <li><strong>Estado:</strong> <span>En Emision</span></li>
+        </ul>
+        <div class="action-buttons">
+          <a href="https://drive.google.com/drive/folders/1WNRnyzFfPdujInipx4kjBj0kyRpXQod9?usp=sharing" target="_blank" class="descargar">Descargar Tomo 1</a>
+          <a href="https://www.youtube.com/watch?v=ZnAjSrPnGZQ" target="_blank" class="trailer">PV animado del manga</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="episodes" id="episode-list"></div>
+
+    <div id="loading-screen">
+      <div class="gif-wrapper">
+        <img src="https://i.pinimg.com/originals/04/29/89/04298998c4006e5847cf9ef157665b43.gif" alt="Cargando..." />
+      </div>
+      <p>Cargando temporada…</p>
+    </div>
+  </div>
+
+    <script>
+  const temporadas = {
+  s1: {
+    episodios: [
+      {
+        num: 1,
+        titulo: "¿Los puedes ver?",
+        thumbnail: "https://nekonekonekogrr.wordpress.com/wp-content/uploads/2025/10/episodio_01.webp?w=1440",
+        rutaHtml: "../../capitulos/mieruko-chan/capitulo-1.html"
+      },
+      {
+        num: 2,
+        titulo: "Ella los ve de verdad",
+        thumbnail: "https://cdn.animeflv.net/screenshots/3524/2/th_3.jpg",
+        rutaHtml: "../../capitulos/mieruko-chan/capitulo-2.html"
+      },
+      {
+        num: 3,
+        titulo: "Ella todavía los ve",
+        thumbnail: "https://nekonekonekogrr.wordpress.com/wp-content/uploads/2025/10/episodio_03_-_001_miko_en_bus-1.webp",
+        rutaHtml: "../../capitulos/mieruko-chan/capitulo-3.html"
+      }
+    ]
+  }
+};
+
+  function cargarTemporada() {
+    const episodeList = document.getElementById('episode-list');
+    episodeList.innerHTML = '';
+    temporadas.s1.episodios.forEach(ep => {
+      const link = document.createElement('a');
+      link.href = ep.rutaHtml;
+      link.style.textDecoration = 'none';
+      link.style.color = 'inherit';
+
+      const div = document.createElement('div');
+      div.className = 'episode';
+      div.innerHTML = `
+        <div class="episode-header">
+          <img src="${ep.thumbnail}" alt="Episodio ${ep.num}">
+          <span>Episodio ${ep.num}: ${ep.titulo}</span>
+        </div>
+      `;
+
+      link.appendChild(div);
+      episodeList.appendChild(link);
+    });
+  }
+
+  function cambiarTemporada() {
+    const selected = document.getElementById('season-select').value;
+    const loader = document.getElementById('loading-screen');
+    loader.style.display = 'flex';
+
+    setTimeout(() => {
+      if (selected === 's2') {
+        window.location.href = 'Tomo-2.html';
+      } else {
+        loader.style.display = 'none';
+        cargarTemporada();
+      }
+    }, 1800);
+  }
+
+  cargarTemporada();
+</script>
+</body>
+</html>

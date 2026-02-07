@@ -104,7 +104,7 @@
 
 <body>
   <header>
-    <h1 style="text-align:center; margin-top:20px;">Buscador de Anime</h1>
+    <h1 style="text-align:center; margin-top:20px;">Buscador de Manga</h1>
     <div style="text-align:center; margin-bottom:20px;">
       <a href="index.html"><button>🏠 Inicio</button></a>
     </div>
@@ -112,14 +112,14 @@
 
   <main>
     <div class="search-bar">
-      <input type="text" id="search-input" placeholder="Buscar anime..." oninput="mostrarSugerencias()" />
+      <input type="text" id="search-input" placeholder="Buscar manga..." oninput="mostrarSugerencias()" />
       <button onclick="buscar()">🔍 Buscar</button>
     </div>
     <ul id="sugerencias"></ul>
   </main>
 
   <script>
-    const animes = [
+    const mangas = [
       {
         alias: ["mieruko", "mieruko-chan"],
         titulo: "Mieruko-chan",
@@ -128,14 +128,19 @@
         imagen: "https://endermanga.wordpress.com/wp-content/uploads/2025/10/8-sin-titulo4_20241007213006.png"
       },
       {
-        alias: ["Isekai", "Samurai", "Isekai-Samurai", "isekai samuraI"],
+        alias: ["isekai", "samurai", "isekai-samurai", "isekai samurai"],
         titulo: "Isekai-Samurai",
         ruta: "mangas/Isekai-samurai/Tomo-1.html",
         tipo: "Manga",
         imagen: "https://endermanga.wordpress.com/wp-content/uploads/2025/11/isekai-sumarai.png"
       },
       {
-        alias: ["I Turned", "Into A Girl", "I Turned My Childhood Friend (♂) Into A Girl", "I Turned My Childhood Friend Into A Girl"],
+        alias: [
+          "i turned",
+          "into a girl",
+          "i turned my childhood friend",
+          "i turned my childhood friend into a girl"
+        ],
         titulo: "I Turned My Childhood Friend (♂) Into A Girl",
         ruta: "mangas/I-Think-I-Turned/Tomo-1.html",
         tipo: "Manga",
@@ -145,7 +150,7 @@
 
     const todasLasClaves = {};
 
-    animes.forEach(item => {
+    mangas.forEach(item => {
       item.alias.forEach(alias => {
         todasLasClaves[alias.toLowerCase()] = item;
       });
@@ -158,7 +163,7 @@
       if (resultado) {
         window.location.href = resultado.ruta;
       } else {
-        alert("No se encontró ningún anime para: " + entrada);
+        alert("No se encontró ningún manga para: " + entrada);
       }
     }
 
@@ -175,10 +180,10 @@
           const li = document.createElement("li");
           li.innerHTML = `
             <div class="sugerencia-item">
-              <img src="${datos.imagen}" />
+              <img src="${datos.imagen}" alt="${datos.titulo}">
               <div class="sugerencia-info">
                 <strong>${datos.titulo}</strong>
-                <span>Anime</span>
+                <span>Manga</span>
               </div>
             </div>
           `;

@@ -171,6 +171,37 @@
       font-size: 1.2em;
       font-weight: bold;
     }
+    
+    /* =========================
+   PORTADA ANIME - RESPONSIVE
+========================= */
+
+#anime-cover {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 480 / 753;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #anime-cover {
+    max-width: 220px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .anime-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #anime-title {
+    font-size: 2.2em;
+  }
+}
   </style>
 </head>
 <body>

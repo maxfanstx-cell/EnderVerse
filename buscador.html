@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://omniverse07.wordpress.com/wp-content/uploads/2024/10/9-sin-titulo_20241008220252.png?w=128&h=128">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    main {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    #search-input {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #sugerencias {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      background: #fff;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 6px;
+      margin-left: 20px;
+    }
+
+    #sugerencias li {
+      padding: 8px;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+    }
+
+    #sugerencias li:hover {
+      background-color: #eee;
+    }
+
+    .sugerencia-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sugerencia-item img {
+      width: 60px;
+      border-radius: 4px;
+    }
+
+    .sugerencia-info strong {
+      font-size: 1em;
+      color: #000;
+    }
+
+    .sugerencia-info span {
+      font-size: 0.85em;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 style="text-align:center; margin-top:20px;">Buscador de Anime</h1>
+    <div style="text-align:center; margin-bottom:20px;">
+      <a href="index.html"><button>🏠 Inicio</button></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Buscar anime..." oninput="mostrarSugerencias()" />
+      <button onclick="buscar()">🔍 Buscar</button>
+    </div>
+    <ul id="sugerencias"></ul>
+  </main>
+
+  <script>
+    const animes = [
+      {
+        alias: ["mieruko", "mieruko-chan"],
+        titulo: "Mieruko-chan",
+        ruta: "mangas/mieruko-chan/Tomo-1.html",
+        tipo: "Manga",
+        imagen: "https://endermanga.wordpress.com/wp-content/uploads/2025/10/8-sin-titulo4_20241007213006.png"
+      },
+      {
+        alias: ["Isekai", "Samurai", "Isekai-Samurai", "isekai samuraI"],
+        titulo: "Isekai-Samurai",
+        ruta: "mangas/Isekai-samurai/Tomo-1.html",
+        tipo: "Manga",
+        imagen: "https://endermanga.wordpress.com/wp-content/uploads/2025/11/isekai-sumarai.png"
+      },
+      {
+        alias: ["I Turned", "Into A Girl", "I Turned My Childhood Friend (♂) Into A Girl", "I Turned My Childhood Friend Into A Girl"],
+        titulo: "I Turned My Childhood Friend (♂) Into A Girl",
+        ruta: "mangas/I-Think-I-Turned/Tomo-1.html",
+        tipo: "Manga",
+        imagen: "https://endermanga.wordpress.com/wp-content/uploads/2026/02/8-sin-titulo4_20241007213006.png"
+      }
+    ];
+
+    const todasLasClaves = {};
+
+    animes.forEach(item => {
+      item.alias.forEach(alias => {
+        todasLasClaves[alias.toLowerCase()] = item;
+      });
+    });
+
+    function buscar() {
+      const entrada = document.getElementById('search-input').value.trim().toLowerCase();
+      const resultado = todasLasClaves[entrada];
+
+      if (resultado) {
+        window.location.href = resultado.ruta;
+      } else {
+        alert("No se encontró ningún anime para: " + entrada);
+      }
+    }
+
+    function mostrarSugerencias() {
+      const entrada = document.getElementById('search-input').value.trim().toLowerCase();
+      const sugerencias = document.getElementById('sugerencias');
+      sugerencias.innerHTML = "";
+
+      if (!entrada) return;
+
+      Object.entries(todasLasClaves)
+        .filter(([clave]) => clave.includes(entrada))
+        .forEach(([clave, datos]) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <div class="sugerencia-item">
+              <img src="${datos.imagen}" />
+              <div class="sugerencia-info">
+                <strong>${datos.titulo}</strong>
+                <span>Anime</span>
+              </div>
+            </div>
+          `;
+          li.onclick = () => {
+            document.getElementById('search-input').value = clave;
+            sugerencias.innerHTML = "";
+            buscar();
+          };
+          sugerencias.appendChild(li);
+        });
+    }
+  </script>
+</body>
+</html>

@@ -369,3 +369,33 @@ header a button:hover {
 a {
   text-decoration: none;
 }
+
+/* =========================
+   PORTADAS CATALOGO
+   PC: 480x753
+   Mobile: adaptado sin romper grid
+========================= */
+
+.imagen-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 480 / 753;
+  overflow: hidden;
+}
+
+.imagen-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .catalogo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .imagen-wrapper {
+    aspect-ratio: 2 / 3;
+  }
+}

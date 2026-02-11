@@ -225,21 +225,21 @@
     episodios: [
       {
         num: 1,
-        titulo: "¿Los puedes ver?",
+        titulo: "",
         thumbnail: "https://omniversemangaka.wordpress.com/wp-content/uploads/2025/05/1-sin-titulo_20250530193800.png",
         rutaHtml: "../../capitulos/I-Think-I-Turned/capitulo-1.html"
       },
       {
         num: 2,
-        titulo: "Ella los ve de verdad",
-        thumbnail: "https://cdn.animeflv.net/screenshots/3524/2/th_3.jpg",
-        rutaHtml: "../../capitulos/mieruko-chan/capitulo-2.html"
+        titulo: "",
+        thumbnail: "https://omniversemangaka.wordpress.com/wp-content/uploads/2025/05/1-sin-titulo_20250530193800.png",
+        rutaHtml: "../../capitulos/I-Think-I-Turned/capitulo-2.html"
       },
       {
         num: 3,
         titulo: "Ella todavía los ve",
-        thumbnail: "https://nekonekonekogrr.wordpress.com/wp-content/uploads/2025/10/episodio_03_-_001_miko_en_bus-1.webp",
-        rutaHtml: "../../capitulos/mieruko-chan/capitulo-3.html"
+        thumbnail: "https://omniversemangaka.wordpress.com/wp-content/uploads/2025/05/1-sin-titulo_20250530193800.png",
+        rutaHtml: "../../capitulos/I-Think-I-Turned/capitulo-3.html"
       }
     ]
   }
@@ -259,7 +259,7 @@
       div.innerHTML = `
         <div class="episode-header">
           <img src="${ep.thumbnail}" alt="Episodio ${ep.num}">
-          <span>Episodio ${ep.num}: ${ep.titulo}</span>
+          <span>Episodio ${ep.num}${ep.titulo ? `: ${ep.titulo}` : ""}</span>
         </div>
       `;
 

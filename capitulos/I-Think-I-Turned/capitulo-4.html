@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capítulo 4 - I Turned My.. A Girl</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .capitulo-container {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .capitulo-banner {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      border-radius: 10px;
+    }
+
+    .capitulo-info ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .capitulo-info ul li {
+      margin-bottom: 8px;
+    }
+
+    .capitulo-info strong {
+      color: #00ff99;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .nav-buttons a {
+      background-color: #D8175F;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    #visor img {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo-text-header">Mini AnimeFLV</h1>
+    <a href="../../mangas/I-Think-I-Turned/Tomo-1.html"><button>⬅ Volver al Tomo</button></a>
+  </header>
+
+  <div class="capitulo-container">
+    <!-- Banner -->
+    <img class="capitulo-banner" src="https://endermanga.wordpress.com/wp-content/uploads/2026/02/cap3.png" alt="Banner del capítulo" />
+
+    <!-- Info del capítulo -->
+    <div class="capitulo-info">
+      <ul>
+        <li><strong>Capítulo:</strong> <span>4</span></li>
+        <li><strong>Cantidad de páginas:</strong> <span>5</span></li>
+        <li><strong>Tomo:</strong> <span>1</span></li>
+      </ul>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="nav-buttons">
+      <a href="../../mangas/I-Think-I-Turned/Tomo-1.html">← Salir</a>
+      <a href="capitulo-3.html">⟵ Capítulo anterior</a>
+    </div>
+
+    <!-- Título dinámico y visor -->
+    <h2 id="titulo-capitulo" style="color: #d8175f; margin-bottom: 20px;"></h2>
+    <div id="visor"></div>
+
+    <!-- Botones de navegación al final -->
+    <div class="nav-buttons">
+      <a href="../../mangas/I-Think-I-Turned/Tomo-1.html">← Salir</a>
+      <a href="capitulo-3.html">⟵ Capítulo anterior</a>
+    </div>
+  </div>
+
+  <script>
+    const capitulo = {
+      titulo: "Capítulo 4:",
+      paginas: [
+        { num: 1, page: "https://endermanga.wordpress.com/wp-content/uploads/2026/02/04-1.png" },
+        { num: 2, page: "https://endermanga.wordpress.com/wp-content/uploads/2026/02/04-2.png" },
+        { num: 3, page: "https://endermanga.wordpress.com/wp-content/uploads/2026/02/04-3.png" },
+        { num: 4, page: "https://endermanga.wordpress.com/wp-content/uploads/2026/02/04-4.png" },
+        { num: 5, page: "https://endermanga.wordpress.com/wp-content/uploads/2026/02/04-5.png" }
+      ]
+    };
+
+    function mostrarPaginas() {
+      document.getElementById("titulo-capitulo").textContent = capitulo.titulo;
+      const contenedor = document.getElementById("visor");
+      capitulo.paginas.forEach(p => {
+        const img = document.createElement("img");
+        img.src = p.page;
+        img.alt = `Página ${p.num}`;
+        contenedor.appendChild(img);
+      });
+    }
+
+    window.onload = mostrarPaginas;
+  </script>
+</body>
+</html>

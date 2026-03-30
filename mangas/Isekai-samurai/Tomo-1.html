@@ -202,6 +202,26 @@
     font-size: 2.2em;
   }
 }
+
+@media (max-width: 768px) {
+
+  .episode-header {
+    display: flex;
+    align-items: flex-start; /* 🔥 ESTE ES EL CAMBIO REAL */
+    gap: 16px;
+  }
+
+  .episode img {
+    width: 120px;   /* 🔥 un poco más grande */
+    flex-shrink: 0;
+  }
+
+  .episode span {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+
+}
   </style>
 </head>
 <body>

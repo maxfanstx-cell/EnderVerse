@@ -6,170 +6,276 @@
   <title>Mieruko-chan - EnderVerse</title>
   <link rel="stylesheet" href="../../style.css" />
   <style>
-    body {
-      background-color: #0b0b0b;
-      color: #fff;
-    }
+<style>
+<style>
+  body {
+  background-color: #0b0b0b;
+  color: #fff;
+}
 
-    .container {
-      padding: 30px;
-    }
+.container {
+  padding: 30px;
+}
 
-    .anime-info {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
+.anime-info {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
 
-    .anime-info img {
-      max-width: 300px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+.anime-info img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
 
-    .anime-details {
-      flex: 1;
-      margin-top: -10px;
-    }
+.anime-details {
+  flex: 1;
+  margin-top: -10px;
+}
 
-    #anime-title {
-      font-size: 3.2em;
-      color: #d8175f;
-      margin-bottom: 5px;
-    }
+#anime-title {
+  font-size: 3.2em;
+  color: #d8175f;
+  margin-bottom: 5px;
+}
 
-    #anime-sinopsis {
-      margin-bottom: 15px;
-    }
+#anime-sinopsis {
+  margin-bottom: 15px;
+}
 
-    .anime-details ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 0;
-    }
+.anime-details ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
 
-    .anime-details ul li {
-      margin-bottom: 10px;
-      font-size: 1em;
-    }
+.anime-details ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
 
-    .anime-details ul li strong {
-      color: #00ff37;
-      margin-right: 5px;
-    }
+.anime-details ul li strong {
+  color: #00ff37;
+  margin-right: 5px;
+}
 
-    .anime-details ul li span {
-      color: #fff;
-    }
+.anime-details ul li span {
+  color: #fff;
+}
 
-    .action-buttons {
-      margin-top: 15px;
-      display: flex;
-      gap: 15px;
-    }
+.action-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
 
-    .action-buttons a {
-      padding: 14px 28px;
-      font-size: 1.1em;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-    }
+.action-buttons a {
+  padding: 14px 28px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2;
+}
 
-    .action-buttons .descargar {
-      background-color: #22F0AC;
-      color: #0b0b0b;
-    }
+.action-buttons .descargar {
+  background-color: #22F0AC;
+  color: #0b0b0b;
+}
 
-    .action-buttons .trailer {
-      background-color: #696969;
-      color: white;
-    }
+.action-buttons .trailer {
+  background-color: #696969;
+  color: white;
+}
 
-    .season-selector {
-      margin: 30px 0 30px;
-      text-align: center;
-    }
+.descargar {
+  text-align: center;
+}
 
-    .season-selector select {
-      background-color: #1a1a1a;
-      color: #31EBB1;
-      font-weight: bold;
-      padding: 12px 24px;
-      border-radius: 8px;
-      border: 1px solid #31EBB1;
-      font-size: 1.1em;
-    }
+.descargar span {
+  display: inline;
+}
 
-    .episode {
-      background-color: #1a1a1a;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+.season-selector {
+  margin: 30px 0;
+  text-align: center;
+}
 
-    .episode-header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+.season-selector select {
+  background-color: #1a1a1a;
+  color: #31EBB1;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #31EBB1;
+  font-size: 1.1em;
+}
 
-    .episode img {
-      width: 120px;
-      border-radius: 10px;
-    }
+.episode {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
 
-    .episode span {
-      font-weight: bold;
-      color: #00ff99;
-    }
+.episode-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    .player-card {
-      margin-top: 15px;
-      background-color: #111;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      display: none;
-    }
+.episode img {
+  width: 120px;
+  border-radius: 10px;
+}
 
-    .player-card iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      border-radius: 10px;
-      border: none;
-    }
+.episode span {
+  font-weight: bold;
+  color: #00ff99;
+}
 
-    #loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #0b0b0b;
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
+.player-card {
+  margin-top: 15px;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
 
-    #loading-screen img {
-      width: 120px;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+.player-card iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 10px;
+  border: none;
+}
 
-    #loading-screen p {
-      color: white;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0b;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loading-screen img {
+  width: 120px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#loading-screen p {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .anime-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .anime-info img {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .anime-details {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  #anime-title {
+    font-size: 2em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  #anime-sinopsis {
+    max-width: 95%;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+  }
+
+  .anime-details ul {
+    text-align: center;
+  }
+
+  .action-buttons {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .action-buttons a {
+    width: 48%;
+    text-align: center;
+  }
+
+  .descargar span {
+    display: block;
+  }
+
+  /* 🔥 EPISODIOS PERFECTOS */
+  .episode {
+    padding: 18px 16px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    text-align: left;
+  }
+
+  .episode-header {
+    align-items: center; /* 🔥 CENTRADO REAL */
+    gap: 14px;
+  }
+
+  .episode img {
+    width: 120px;
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+
+  .episode span {
+    font-size: 1.05em;
+    line-height: 1.5;
+    display: flex;
+    align-items: center; /* 🔥 centra vertical perfecto */
+  }
+}
+
+/* ultra chico */
+@media (max-width: 400px) {
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+
+  .action-buttons a {
+    width: 100%;
+  }
+}
+</style>
+</style>
   </style>
 </head>
 <body>
@@ -203,7 +309,7 @@
           <li><strong>Estado:</strong> <span>En Emision</span></li>
         </ul>
         <div class="action-buttons">
-          <a href="https://drive.google.com/drive/folders/1WNRnyzFfPdujInipx4kjBj0kyRpXQod9?usp=sharing" target="_blank" class="descargar">Descargar Tomo 1</a>
+          <a href="https://drive.google.com/drive/folders/1WNRnyzFfPdujInipx4kjBj0kyRpXQod9?usp=sharing" class="descargar">Descargar <span>Tomo 1</span></a>
           <a href="https://www.youtube.com/watch?v=ZnAjSrPnGZQ" target="_blank" class="trailer">PV animado del manga</a>
         </div>
       </div>
@@ -259,7 +365,7 @@
       div.innerHTML = `
         <div class="episode-header">
           <img src="${ep.thumbnail}" alt="Episodio ${ep.num}">
-          <span>Episodio ${ep.num}: ${ep.titulo}</span>
+          <span>Episodio ${ep.num}${ep.titulo ? `: ${ep.titulo}` : ""}</span>
         </div>
       `;
 

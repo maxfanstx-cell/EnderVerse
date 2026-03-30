@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Turned.. Into A Girl - EnderVerse</title>
+
+<link rel="stylesheet" href="../../style.css" />
+
+<style>
+
+/* ======================
+   ESTILO ORIGINAL
+====================== */
+
+body {
+  background-color: #0b0b0b;
+  color: #fff;
+}
+
+.container {
+  padding: 30px;
+}
+
+.anime-info {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.anime-info img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.anime-details {
+  flex: 1;
+  margin-top: -10px;
+}
+
+#anime-title {
+  font-size: 3.2em;
+  color: #d8175f;
+  margin-bottom: 5px;
+}
+
+.anime-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.anime-details ul li strong {
+  color: #00ff37;
+}
+
+.action-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.action-buttons a {
+  padding: 14px 28px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.descargar {
+  background-color: #22F0AC;
+  color: #0b0b0b;
+}
+
+.trailer {
+  background-color: #696969;
+  color: white;
+}
+
+.season-selector {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.season-selector select {
+  background-color: #1a1a1a;
+  color: #31EBB1;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #31EBB1;
+  font-size: 1.1em;
+}
+
+.episode {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.episode-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.episode img {
+  width: 120px;
+  border-radius: 10px;
+}
+
+.episode span {
+  font-weight: bold;
+  color: #00ff99;
+}
+
+
+/* =====================================================
+   ⭐⭐⭐ FIX MOBILE — SOLO CELULAR ⭐⭐⭐
+   EXACTAMENTE estilo Isekai Samurai
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 20px 15px;
+  }
+
+  /* TODO EN COLUMNA */
+  .anime-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* PORTADA CENTRADA */
+  .anime-info img {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto 15px;
+  }
+
+  /* INFO CENTRADA */
+  .anime-details {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #anime-title {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  #anime-sinopsis {
+    text-align: center;
+    padding: 0 5px;
+  }
+
+  .anime-details ul li {
+    text-align: center;
+  }
+
+  /* BOTONES COMO EN TUS IMÁGENES */
+  .action-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .action-buttons a {
+    flex: 1;
+    max-width: 220px;
+    text-align: center;
+  }
+
+  /* EPISODIOS CENTRADOS */
+  .episode-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .episode img {
+    width: 100%;
+    max-width: 260px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1 style="color:#d8175f;font-size:3.2em;">EnderVerse</h1>
+<a href="../../catalogo.html"><button>⬅ Volver al catálogo</button></a>
+</header>
+
+<div class="container">
+
+<div class="anime-info">
+
+<div style="text-align:center;">
+<img id="anime-cover"
+src="https://endermanga.wordpress.com/wp-content/uploads/2026/02/8-sin-titulo4_20241007213006.png">
+
+<div class="season-selector">
+<strong>Seleccionar Temporada:</strong><br><br>
+
+<select id="season-select" onchange="cambiarTemporada()">
+<option value="s1">S1: I Turned My.. A Girl Tomo 1</option>
+<option value="s2">S2: I Turned My.. A Girl Tomo 2</option>
+</select>
+
+</div>
+</div>
+
+<div class="anime-details">
+
+<h2 id="anime-title">
+I Turned My Childhood Friend (♂) Into A Girl
+</h2>
+
+<p id="anime-sinopsis">
+Un muchacho popular que en secreto está interesado en cosméticos le pide a su amigo simplón dejarlo maquillarle para practicar… ¿¡Y termina viéndose bello(a)!?
+</p>
+
+<ul>
+<li><strong>Cantidad de Tomos:</strong> 11</li>
+<li><strong>Tomo:</strong> 1</li>
+<li><strong>Idioma:</strong> Español Latino</li>
+<li><strong>autor:</strong> Azusa Banjo</li>
+<li><strong>Fecha de Estreno:</strong> 11 de septiembre de 2020</li>
+<li><strong>Mayoria de Edad:</strong> 13+</li>
+<li><strong>Estado:</strong> En Emision</li>
+</ul>
+
+<div class="action-buttons">
+<a href="#" class="descargar">Descargar Tomo 1</a>
+<a href="#" class="trailer">PV animado del manga</a>
+</div>
+
+</div>
+</div>
+
+<div class="episodes" id="episode-list"></div>
+
+</div>
+
+</body>
+</html>

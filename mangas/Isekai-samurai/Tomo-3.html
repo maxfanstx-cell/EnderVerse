@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isekai-samurai - EnderVerse</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #fff;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    .anime-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .anime-info img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .anime-details {
+      flex: 1;
+      margin-top: -10px;
+    }
+
+    #anime-title {
+      font-size: 3.2em;
+      color: #d8175f;
+      margin-bottom: 5px;
+    }
+
+    #anime-sinopsis {
+      margin-bottom: 15px;
+    }
+
+    .anime-details ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    .anime-details ul li {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+
+    .anime-details ul li strong {
+      color: #00ff37;
+      margin-right: 5px;
+    }
+
+    .anime-details ul li span {
+      color: #fff;
+    }
+
+    .action-buttons {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .action-buttons a {
+      padding: 14px 28px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .action-buttons .descargar {
+      background-color: #22F0AC;
+      color: #0b0b0b;
+    }
+
+    .action-buttons .trailer {
+      background-color: #696969;
+      color: white;
+    }
+
+    .season-selector {
+      margin: 30px 0 30px;
+      text-align: center;
+    }
+
+    .season-selector select {
+      background-color: #1a1a1a;
+      color: #31EBB1;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: 1px solid #31EBB1;
+      font-size: 1.1em;
+    }
+
+    .episode {
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .episode-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .episode img {
+      width: 120px;
+      border-radius: 10px;
+    }
+
+    .episode span {
+      font-weight: bold;
+      color: #00ff99;
+    }
+
+    .player-card {
+      margin-top: 15px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+    }
+
+    .player-card iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0b0b0b;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #loading-screen img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    #loading-screen p {
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    /* 📱 MOVIL */
+    @media (max-width: 768px) {
+
+      .container {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .anime-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .anime-info img {
+        max-width: 260px;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .anime-details {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      #anime-title {
+        font-size: 2em;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+
+      #anime-sinopsis {
+        max-width: 95%;
+        margin: 0 auto 20px;
+        line-height: 1.6;
+      }
+
+      .anime-details ul {
+        text-align: center;
+      }
+
+      /* 🔥 BOTONES ARREGLADOS */
+      .action-buttons {
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+
+      .action-buttons a {
+        flex: 0 1 auto;
+        width: 48%;
+        max-width: none;
+        text-align: center;
+      }
+
+      .season-selector {
+        margin-top: 20px;
+      }
+
+      .episode {
+        text-align: left;
+      }
+
+      .episode-header {
+        gap: 12px;
+      }
+
+      .episode img {
+        width: 90px;
+      }
+    }
+
+    /* opcional: ultra chico */
+    @media (max-width: 400px) {
+      .action-buttons {
+        flex-wrap: wrap;
+      }
+
+      .action-buttons a {
+        width: 100%;
+      }
+    }
+
+    .action-buttons a {
+  line-height: 1.2;
+}
+
+    .descargar span {
+  display: inline;
+}
+
+  @media (max-width: 768px) {
+  .descargar span {
+    display: block;
+  }
+}
+
+.descargar {
+  text-align: center;
+}
+
+  @media (max-width: 768px) {
+
+  .episode {
+    padding: 20px;
+    margin-bottom: 18px;
+  }
+
+  .episode-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .episode img {
+    width: 110px;       /* 🔥 más grande pero sin romper layout */
+    flex-shrink: 0;     /* 🔥 evita que se deforme */
+  }
+
+  .episode span {
+    font-size: 1.2em;
+    line-height: 1.6;
+    display: block;
+    max-width: 100%;    /* 🔥 deja que el texto use espacio */
+  }
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color: #d8175f; font-size: 3.2em;">EnderVerse</h1>
+    <a href="../../catalogo.html"><button>⬅ Volver al catálogo</button></a>
+  </header>
+
+  <div class="container">
+    <div class="anime-info">
+      <div style="text-align: center;">
+        <img id="anime-cover" src="https://endermanga.wordpress.com/wp-content/uploads/2025/11/isekai-sumarai.png" alt="Portada del anime">
+        <div class="season-selector">
+          <label for="season-select"><strong>Seleccionar Temporada:</strong></label><br><br>
+          <select id="season-select" onchange="cambiarTemporada()">
+            <option value="s1">S1: Isekai samurai Tomo 1</option>
+            <option value="s2">S2: Isekai samurai Tomo 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="anime-details">
+        <h2 id="anime-title">Isekai Samurai</h2>
+        <p id="anime-sinopsis">Ginko es una samurái que sobrevivió a la histórica Batalla de Sekigahara. Desde pequeña, le enseñaron que el destino más honorable para un guerrero es morir en combate. Sin embargo, su habilidad con la espada es tan abrumadora que nadie ha logrado vencerla. Desesperada por encontrar un oponente digno que le brinde una muerte honorable, Ginko ruega a Buda por ayuda.
+
+En respuesta, es transportada a un mundo alternativo de fantasía medieval, donde los humanos luchan contra demonios liderados por un misterioso Rey Demonio. En este nuevo mundo, Ginko se convierte en una fuerza imparable, enfrentando enemigos sobrenaturales mientras sigue buscando el combate que le dé sentido a su existencia</p>
+        <ul>
+          <li><strong>Cantidad de Tomos:</strong> <span>11</span></li>
+          <li><strong>Tomo:</strong> <span>1</span></li>
+          <li><strong>Idioma:</strong> <span>Español Latino</span></li>
+          <li><strong>autor:</strong> <span>Keigo Saitō</span></li>
+          <li><strong>Fecha de Estreno:</strong> <span>22 de febrero de 2023</span></li>
+          <li><strong>Mayoria de Edad:</strong> <span>16+</span></li>
+          <li><strong>Estado:</strong> <span>En Emision</span></li>
+        </ul>
+        <div class="action-buttons">
+          <a href="https://drive.google.com/drive/folders/1WNRnyzFfPdujInipx4kjBj0kyRpXQod9?usp=sharing" class="descargar">Descargar <span>Tomo 1</span></a>
+          <a href="https://www.youtube.com/watch?v=ZnAjSrPnGZQ" target="_blank" class="trailer">PV animado del manga</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="episodes" id="episode-list"></div>
+
+    <div id="loading-screen">
+      <div class="gif-wrapper">
+        <img src="https://i.pinimg.com/originals/04/29/89/04298998c4006e5847cf9ef157665b43.gif" alt="Cargando..." />
+      </div>
+      <p>Cargando temporada…</p>
+    </div>
+  </div>
+
+    <script>
+  const temporadas = {
+  s1: {
+    episodios: [
+      {
+        num: 1,
+        titulo: "La Espada que No Puede Morir",
+        thumbnail: "https://endermanga.wordpress.com/wp-content/uploads/2025/11/ginko-thumbnail.png",
+        rutaHtml: "../../capitulos/Isekai-samurai/capitulo-1.html"
+      },
+      {
+        num: 2,
+        titulo: "El Mundo que Clama Sangre",
+        thumbnail: "https://endermanga.wordpress.com/wp-content/uploads/2025/11/thumbnail-2-isekai.png",
+        rutaHtml: "../../capitulos/I-Think-I-Turned/capitulo-2.html"
+      },
+      {
+        num: 3,
+        titulo: "El Juramento de Ginko",
+        thumbnail: "https://endermanga.wordpress.com/wp-content/uploads/2025/11/thumbnail-3-isekai.png",
+        rutaHtml: "../../capitulos/I-Think-I-Turned/capitulo-3.html"
+      }      
+    ]
+  }
+};
+
+  function cargarTemporada() {
+    const episodeList = document.getElementById('episode-list');
+    episodeList.innerHTML = '';
+    temporadas.s1.episodios.forEach(ep => {
+      const link = document.createElement('a');
+      link.href = ep.rutaHtml;
+      link.style.textDecoration = 'none';
+      link.style.color = 'inherit';
+
+      const div = document.createElement('div');
+      div.className = 'episode';
+      div.innerHTML = `
+        <div class="episode-header">
+          <img src="${ep.thumbnail}" alt="Episodio ${ep.num}">
+          <span>Episodio ${ep.num}${ep.titulo ? `: ${ep.titulo}` : ""}</span>
+        </div>
+      `;
+
+      link.appendChild(div);
+      episodeList.appendChild(link);
+    });
+  }
+
+  function cambiarTemporada() {
+    const selected = document.getElementById('season-select').value;
+    const loader = document.getElementById('loading-screen');
+    loader.style.display = 'flex';
+
+    setTimeout(() => {
+      if (selected === 's2') {
+        window.location.href = 'Tomo-2.html';
+      } else {
+        loader.style.display = 'none';
+        cargarTemporada();
+      }
+    }, 1800);
+  }
+
+  cargarTemporada();
+</script>
+</body>
+</html>

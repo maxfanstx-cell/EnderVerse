@@ -39,8 +39,9 @@ body{
   transition:transform .25s ease;
 }
 
+/* 🔥 NUEVA ANIMACION (sube) */
 .error-button:hover{
-  transform:scale(1.05);
+  transform:translateX(-50%) translateY(-8px);
 }
 
 .error-button img{
@@ -49,7 +50,7 @@ body{
   display:block;
 }
 
-/* 📱 MOBILE (como tu segunda imagen) */
+/* 📱 MOBILE */
 @media (max-width:768px){
 
   .error-button{
@@ -62,7 +63,7 @@ body{
 
 }
 
-/* 💻 PC (como tu primera imagen) */
+/* 💻 PC */
 @media (min-width:769px){
 
   .error-button{
@@ -91,7 +92,6 @@ body{
 
 </div>
 
-
 <script>
 
 /* =========================
@@ -101,19 +101,18 @@ CONFIGURACION
 const pagina = {
 
   errorPC:{
-    fondo:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/naga-pc-definitivo.png?w=1440",   // 🔥 CAMBIAR
-    boton:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/buttom-pc.png",   // 🔥 CAMBIAR
+    fondo:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/naga-pc-definitivo.png?w=1440",
+    boton:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/buttom-pc.png",
     ruta:"/EnderVerse/"
   },
 
   errorCell:{
-    fondo:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/naga-mobile.png", // 🔥 CAMBIAR
+    fondo:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/naga-mobile.png",
     boton:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/buttom-cell.png",
     ruta:"/EnderVerse/"
   }
 
 };
-
 
 /* =========================
 DETECTAR DISPOSITIVO
@@ -122,7 +121,6 @@ DETECTAR DISPOSITIVO
 function esCelular(){
   return window.innerWidth <= 768;
 }
-
 
 /* =========================
 CARGAR CONTENIDO
@@ -136,13 +134,8 @@ function cargarError(){
 
   const config = esCelular() ? pagina.errorCell : pagina.errorPC;
 
-  // Fondo PNG desde URL
   bg.style.backgroundImage = `url("${config.fondo}")`;
-
-  // Botón PNG desde URL
   btn.src = config.boton;
-
-  // Ruta
   link.href = config.ruta;
 
 }

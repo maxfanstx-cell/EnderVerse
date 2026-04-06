@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Error 404</title>
+
+<style>
+
+body{
+  margin:0;
+  background-color:#000;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* CONTENEDOR GENERAL */
+.error-container{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+/* FONDO */
+.error-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* BOTON */
+.error-button{
+  position:absolute;
+  cursor:pointer;
+  transition:transform .25s ease;
+}
+
+.error-button:hover{
+  transform:translateY(-6px);
+}
+
+.error-button img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+/* 📱 POSICION MOBILE */
+@media (max-width:768px){
+
+  .error-button{
+    width:180px;
+    bottom:12%;
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+}
+
+/* 💻 POSICION PC */
+@media (min-width:769px){
+
+  .error-button{
+    width:240px;
+    bottom:10%;
+    right:10%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="error-container">
+
+  <!-- FONDO -->
+  <div class="error-bg" id="errorBg"></div>
+
+  <!-- BOTON -->
+  <a id="errorBtn" class="error-button">
+    <img id="btnImg" alt="Volver">
+  </a>
+
+</div>
+
+
+<script>
+
+/* =========================
+CONFIGURACION
+========================= */
+
+const pagina = {
+
+  errorPC:{
+    fondo:"img/naga-pc.svg",
+    boton:"img/button.svg",
+    ruta:"../index.html"
+  },
+
+  errorCell:{
+    fondo:"img/naga cell definitiva.svg",
+    boton:"img/button.svg",
+    ruta:"../index.html"
+  }
+
+};
+
+
+/* =========================
+DETECTAR DISPOSITIVO
+========================= */
+
+function esCelular(){
+  return window.innerWidth <= 768;
+}
+
+
+/* =========================
+CARGAR CONTENIDO
+========================= */
+
+function cargarError(){
+
+  const bg = document.getElementById("errorBg");
+  const btn = document.getElementById("btnImg");
+  const link = document.getElementById("errorBtn");
+
+  const config = esCelular() ? pagina.errorCell : pagina.errorPC;
+
+  bg.style.backgroundImage = `url(${config.fondo})`;
+  btn.src = config.boton;
+  link.href = config.ruta;
+
+}
+
+cargarError();
+window.addEventListener("resize", cargarError);
+
+</script>
+
+</body>
+</html>

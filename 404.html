@@ -9,15 +9,13 @@
 
 body{
   margin:0;
-  background-color:#000;
+  background:#000;
   height:100vh;
   overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  font-family:Arial, sans-serif;
 }
 
-/* CONTENEDOR GENERAL */
+/* CONTENEDOR */
 .error-container{
   position:relative;
   width:100%;
@@ -42,7 +40,7 @@ body{
 }
 
 .error-button:hover{
-  transform:translateY(-6px);
+  transform:scale(1.05);
 }
 
 .error-button img{
@@ -51,26 +49,27 @@ body{
   display:block;
 }
 
-
-/* 📱 POSICION MOBILE */
+/* 📱 MOBILE (como tu segunda imagen) */
 @media (max-width:768px){
 
   .error-button{
-    width:180px;
-    bottom:12%;
+    width:75%;
+    max-width:320px;
     left:50%;
+    bottom:8%;
     transform:translateX(-50%);
   }
 
 }
 
-/* 💻 POSICION PC */
+/* 💻 PC (como tu primera imagen) */
 @media (min-width:769px){
 
   .error-button{
-    width:240px;
+    width:420px;
+    left:50%;
     bottom:10%;
-    right:10%;
+    transform:translateX(-50%);
   }
 
 }
@@ -87,7 +86,7 @@ body{
 
   <!-- BOTON -->
   <a id="errorBtn" class="error-button">
-    <img id="btnImg" alt="Volver">
+    <img id="btnImg" alt="Volver al menú">
   </a>
 
 </div>
@@ -102,15 +101,15 @@ CONFIGURACION
 const pagina = {
 
   errorPC:{
-    fondo:"img/naga-pc.svg",
-    boton:"img/button.svg",
-    ruta:"../index.html"
+    fondo:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/naga-pc-definitivo.png?w=1440",   // 🔥 CAMBIAR
+    boton:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/buttom-pc.png",   // 🔥 CAMBIAR
+    ruta:"index.html"
   },
 
   errorCell:{
-    fondo:"img/naga cell definitiva.svg",
-    boton:"img/button.svg",
-    ruta:"../index.html"
+    fondo:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/naga-mobile.png", // 🔥 CAMBIAR
+    boton:"https://endermanga.wordpress.com/wp-content/uploads/2026/04/buttom-cell.png",
+    ruta:"index.html"
   }
 
 };
@@ -137,8 +136,13 @@ function cargarError(){
 
   const config = esCelular() ? pagina.errorCell : pagina.errorPC;
 
-  bg.style.backgroundImage = `url(${config.fondo})`;
+  // Fondo PNG desde URL
+  bg.style.backgroundImage = `url("${config.fondo}")`;
+
+  // Botón PNG desde URL
   btn.src = config.boton;
+
+  // Ruta
   link.href = config.ruta;
 
 }

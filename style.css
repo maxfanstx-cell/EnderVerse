@@ -399,3 +399,8 @@ a {
     aspect-ratio: 2 / 3;
   }
 }
+
+/* Variante amarilla para spin-off */
+.spin-off {
+  background-color: #F5EE27;
+}

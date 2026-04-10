@@ -6,11 +6,11 @@
   <title>Buscador</title>
 
   <!-- Favicon -->
-<link rel="icon" href="img/pato.svg" type="image/svg+xml">
-  
+  <link rel="icon" href="img/pato.svg" type="image/svg+xml">
+
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Favicon -->
+  <!-- Favicon adicional -->
   <link rel="icon" type="image/png" href="https://omniverse07.wordpress.com/wp-content/uploads/2024/10/9-sin-titulo_20241008220252.png?w=128&h=128">
 
   <style>
@@ -95,6 +95,7 @@
     }
 
     .sugerencia-info strong {
+      display: block;
       font-size: 1em;
       color: #000;
     }
@@ -116,9 +117,15 @@
 
   <main>
     <div class="search-bar">
-      <input type="text" id="search-input" placeholder="Buscar manga..." oninput="mostrarSugerencias()" />
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Buscar manga..."
+        oninput="mostrarSugerencias()"
+      />
       <button onclick="buscar()">🔍 Buscar</button>
     </div>
+
     <ul id="sugerencias"></ul>
   </main>
 
@@ -156,8 +163,18 @@
     });
 
     function buscar() {
-      const entrada = document.getElementById('search-input').value.trim().toLowerCase();
-      const resultado = todasLasClaves[entrada];
+      const entrada = document.getElementById("search-input").value.trim().toLowerCase();
+
+      // Coincidencia exacta primero
+      if (todasLasClaves[entrada]) {
+        window.location.href = todasLasClaves[entrada].ruta;
+        return;
+      }
+
+      // Si no hay exacta, busca la primera coincidencia parcial
+      const resultado = mangas.find(item =>
+        item.alias.some(alias => alias.toLowerCase().includes(entrada))
+      );
 
       if (resultado) {
         window.location.href = resultado.ruta;
@@ -167,30 +184,36 @@
     }
 
     function mostrarSugerencias() {
-      const entrada = document.getElementById('search-input').value.trim().toLowerCase();
-      const sugerencias = document.getElementById('sugerencias');
+      const entrada = document.getElementById("search-input").value.trim().toLowerCase();
+      const sugerencias = document.getElementById("sugerencias");
+
       sugerencias.innerHTML = "";
 
       if (!entrada) return;
 
-      Object.entries(todasLasClaves)
-        .filter(([clave]) => clave.includes(entrada))
-        .forEach(([clave, datos]) => {
+      mangas
+        .filter(item =>
+          item.alias.some(alias =>
+            alias.toLowerCase().includes(entrada)
+          )
+        )
+        .forEach(datos => {
           const li = document.createElement("li");
+
           li.innerHTML = `
             <div class="sugerencia-item">
               <img src="${datos.imagen}" alt="${datos.titulo}">
               <div class="sugerencia-info">
                 <strong>${datos.titulo}</strong>
-                <span>Manga</span>
+                <span>${datos.tipo}</span>
               </div>
             </div>
           `;
+
           li.onclick = () => {
-            document.getElementById('search-input').value = clave;
-            sugerencias.innerHTML = "";
-            buscar();
+            window.location.href = datos.ruta;
           };
+
           sugerencias.appendChild(li);
         });
     }
